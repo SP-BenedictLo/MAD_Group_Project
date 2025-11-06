@@ -1,4 +1,4 @@
-# <ProjectNameHere>
+# ProjectNameHere
 <!--project description here-->
 
 Project for ET0529, Mobile Applications Development, Semester 2 2025.
