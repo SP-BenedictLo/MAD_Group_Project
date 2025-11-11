@@ -1,0 +1,33 @@
+mutation CreateVolunteerHour($date: Date!, $hours: Int!, $opportunityId: UUID!, $notes: String, $volunteerId: UUID!) @auth(level: USER) {
+  volunteerHour_insert(data: {date: $date, hours: $hours, opportunityId: $opportunityId, notes: $notes, volunteerId: $volunteerId})
+}
+
+query ListOpportunities @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  opportunities {
+    id
+    title
+    description
+    location
+    startDate
+    endDate
+    timeCommitment
+    requiredSkills
+  }
+}
+
+mutation UpdateOrganization($id: UUID!, $name: String, $description: String, $address: String, $contactEmail: String) @auth(level: USER) {
+  organization_update(id: $id, data: {name: $name, description: $description, address: $address, contactEmail: $contactEmail})
+}
+
+query GetApplicationsForOpportunity($opportunityId: UUID!) @auth(level: USER) {
+  applications(where: {opportunityId: {eq: $opportunityId}}) {
+    id
+    volunteer {
+      id
+      displayName
+      email
+    }
+    coverLetter
+    status
+  }
+}

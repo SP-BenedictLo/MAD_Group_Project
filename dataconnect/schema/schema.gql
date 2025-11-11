@@ -1,0 +1,55 @@
+type User @table {
+  displayName: String!
+  email: String!
+  role: String!
+  createdAt: Timestamp!
+  photoUrl: String
+  phoneNumber: String
+  bio: String
+}
+
+type Organization @table {
+  name: String!
+  description: String!
+  address: String!
+  contactEmail: String!
+  createdAt: Timestamp!
+  website: String
+  logoUrl: String
+  missionStatement: String
+  adminUser: User
+}
+
+type Opportunity @table {
+  title: String!
+  description: String!
+  location: String!
+  requiredSkills: [String!]!
+  timeCommitment: String!
+  startDate: Date!
+  endDate: Date!
+  createdAt: Timestamp!
+  imageUrl: String
+  specificRequirements: String
+  numberOfVolunteersNeeded: Int
+  organization: Organization!
+}
+
+type Application @table {
+  status: String!
+  createdAt: Timestamp!
+  coverLetter: String
+  volunteerMotivation: String
+  volunteer: User!
+  opportunity: Opportunity!
+}
+
+type VolunteerHour @table {
+  date: Date!
+  hours: Int!
+  createdAt: Timestamp!
+  notes: String
+  volunteer: User!
+  opportunity: Opportunity!
+  approvedBy: User
+}
