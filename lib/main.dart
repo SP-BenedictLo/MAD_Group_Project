@@ -2,18 +2,33 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'Login.dart';
 import 'package:flutter/material.dart';
 import 'Homepage.dart';
+// NOTE: You don't need 'package:flutter/services.dart' for this code
 import 'package:firebase_core/firebase_core.dart';
+// IMPORTANT: You MUST generate and import this file to pass options
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(HomePage());
+  
+  // CORRECT WAY TO INITIALIZE FIREBASE
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  
+  runApp(const MyApp());
 }
 
+// Your MyApp and _MyAppState classes remain the same...
 
-class MyApp extends StatelessWidget {
+
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,10 +46,10 @@ class MyApp extends StatelessWidget {
           }
           // If the user is logged in, show the MainPage
           if (snapshot.hasData) {
-            return MyHomeApp();
+            return const LoginPage();
           }
           // If the user is not logged in, show the LoginPage
-          return const LoginPage();
+          return MyHomeApp();
         },
       ),
     );

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "706615812882",
+    "project_id": "mad-projects-y2",
+    "storage_bucket": "mad-projects-y2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706615812882:android:987ad1839a2875f9c449cb",
+        "android_client_info": {
+          "package_name": "com.example.mad_group_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706615812882-phm49k2ark887fkspuf5rkdaa79qt51g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJDOSDA6al1xu1GrIViwzG_ICt2PbLpHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "706615812882-phm49k2ark887fkspuf5rkdaa79qt51g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "706615812882-h122i8drid0rkkh3iar35d6kvqutaoan.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.madGroupProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
