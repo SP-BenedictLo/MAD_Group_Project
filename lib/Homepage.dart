@@ -6,6 +6,8 @@ import 'Login.dart';
 import 'Volunteer.dart';
 import 'courses.dart';
 import 'AboutUs.dart';
+import 'game/game_app.dart';
+
 
 void main() {
   runApp(MyHomeApp());
@@ -304,6 +306,16 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => LoginPage()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.expand_less),
+            title: Text('game'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => GameApp()),
               );
             },
           ),
